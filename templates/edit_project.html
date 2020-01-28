@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Edit Person</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="{{url_for('static', filename ='css/freelancer.min.css')}}" rel="stylesheet">
+  
+</head>
+<body>
+    
+    
+
+<form method="post" action="/edit_person/{{person.person_id}}" enctype="multipart/form-data">
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="fname">Name</label>
+                    <input type="text" id="fname" class="form-control form-control-lg" name="name" value="{{person.name}}">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="lname">Email</label>
+                    <input type="text" id="lname" class="form-control form-control-lg" name="email" value="{{person.email}}">
+
+                </div>                
+                <div class="col-md-6 form-group">
+                    <label for="lname">Phone Number</label>
+                    <input type="text" id="lname" class="form-control form-control-lg" name="phone" value="{{person.phone}}">
+
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="lname">Picture</label>
+                    <input type="file" id="lname" class="form-control form-control-lg" name="picture" value="{{person.picture}}">
+
+                </div>
+
+                <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Update" class="btn btn-primary btn-lg px-5">
+                </div>
+            </div>
+            </div>
+         </div>
+     </div>
+    </form>
+
+
+</body>
+</html>

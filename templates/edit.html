@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Edit</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="{{url_for('static', filename ='css/freelancer.min.css')}}" rel="stylesheet">
+
+
+</head>
+<body id="page-top">
+ <section class="page-section" id="contact">
+    <div class="container">
+
+      <!-- Contact Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Manage</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+          <h1>People</h1>
+       <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Email</th> 
+          <th>Phone</th>
+          <th>Picture</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {%for person in people%}
+        <tr>
+          <td>{{person.name}}</td>
+          <td>{{person.email}}</td>
+          <td>{{person.phone}}</td>
+          <td><img src="static/known_people/{{person.picture}}" width="50"></td>
+          <td><a href="{{ url_for('display_person_edit',person_id= person.person_id) }}">Edit</a></td>
+          <td><a href="{{ url_for('delete_person',person_id= person.person_id) }}">Delete</a></li></td>
+        </tr>
+        {%endfor%}
+      </table>
+           
+           
+
+  <!-- Navigation -->
+        <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+             
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="static/js/jqBootstrapValidation.js"></script>
+  <script src="static/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="static/js/freelancer.min.js"></script>
+
+</body>
+
+</html>
